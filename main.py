@@ -21,15 +21,15 @@ def loop():
             center["sessions"]=list(filter(lambda x: x["min_age_limit"]<=45 and x["available_capacity"]>0,center["sessions"]))
         centers=list(filter(lambda x: x["sessions"],centers))
 
-    if centers:
-        print("\n\n\n===========Slots==========\n\n\n")
-        print(centers)
-        centers=list(map(lambda x: x["name"],centers))
-        data=f"Vaccination slots available in {', '.join(centers)}."
-        print("\n\n\n===========Centers==========\n\n\n")
-        print(data)
-        print("\n========================\n")
-        return data
+        if centers:
+            print("\n\n\n===========Slots==========\n\n\n")
+            print(centers)
+            centers=list(map(lambda x: x["name"],centers))
+            data=f"Vaccination slots available in {', '.join(centers)}."
+            print("\n\n\n===========Centers==========\n\n\n")
+            print(data)
+            print("\n========================\n")
+            return data
 
     return None
 
