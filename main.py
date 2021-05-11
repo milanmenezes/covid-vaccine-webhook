@@ -18,7 +18,7 @@ def loop():
         centers=json.loads(resp.text)["centers"]
         centers=list(filter(lambda x: x["block_name"]=="Mysore", centers))
         for center in centers:
-            center["sessions"]=list(filter(lambda x: x["min_age_limit"]<=45 and x["available_capacity"]>0,center["sessions"]))
+            center["sessions"]=list(filter(lambda x: x["min_age_limit"]<45 and x["available_capacity"]>0,center["sessions"]))
         centers=list(filter(lambda x: x["sessions"],centers))
 
         if centers:
