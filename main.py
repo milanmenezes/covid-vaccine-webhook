@@ -30,6 +30,8 @@ def loop():
             print(data)
             print("\n========================\n")
             return data
+    else:
+        print("\nAPI request error\n")
 
     return None
 
